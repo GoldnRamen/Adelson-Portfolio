@@ -1,3 +1,6 @@
+const { Odibee_Sans } = require("next/font/google");
+const { Roboto } = require("next/font/google");
+const { Lobster } = require("next/font/google");
 // tailwind.config.js
 module.exports = {
   content: [
@@ -14,6 +17,11 @@ module.exports = {
       },
       animation: {
         slideInOnce: 'slideInOnce 1s ease-out forwards',
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        lobster: ['Lobster', 'sans-serif'],
+        odibee: ['Odibee_Sans', 'sans-serif'],
       },
     },
   },

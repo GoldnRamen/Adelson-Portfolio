@@ -15,6 +15,24 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+@font-face {
+  font-family: 'Roboto';
+  src: url("/public/fonts/Roboto.woff2") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lobster';
+  src: url("/public/fonts/Lobster.woff2") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Odibee_Sans';
+  src: url("/public/fonts/Odibee-Sans.woff2") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
 .roboto{
    font-family: var(--font-roboto), sans-serif;
@@ -84,12 +102,13 @@ body {
 }
 @keyframes slideNameBox {
   0% {
-      top: 75vh;
-      left: -20%;
+      top: 20vh;
+      right: -20%;
+      opacity: 0;
     }
   100% {
-    top: 75vh;
-    left: 5%;  /* Slide left */
+    top: 20vh;
+    right: 15%;  /* Slide left */
   }
 }
 @keyframes rotBGimg {
@@ -98,6 +117,17 @@ body {
   }
   to{
     transform: rotate(360deg);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.0);
   }
 }
 
@@ -114,12 +144,12 @@ body {
 .animated-slide-top {
   opacity: 0;
   animation: slideInFromTop 1s ease-out forwards;
-  animation-delay: 5s;
+  animation-delay: 1s;
 }
 .animated-slide-bottom {
   opacity: 0;
   animation: slideInFromBottom 1s ease-out forwards;
-  animation-delay: 5s;
+  animation-delay: 1s;
 }
 .irregular-box {
   /* width: 100%;
@@ -131,7 +161,7 @@ body {
 }
 .slideBox{
   animation: slideNameBox 5s ease-out forwards;
-  animation-delay: 5s;
+  animation-delay: 2s;
 }
 .card{
   display: flex;
@@ -154,4 +184,40 @@ body {
   inset: 5px;
   background: chocolate;
   border-radius: 15px;
+}
+*:after, *:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.home{
+  position: relative;
+  padding: 0 5px;
+}
+.home:after{
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  left: 0;
+  width: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+.home:hover{
+  color: white;
+  border-left: .5px solid rgb(100, 100, 100);
+  border-right: .5px solid rgb(100, 100, 100);
+  box-shadow: #171717;
+}
+.home:hover:after{
+  width: 100%;
+}
+.transPic:hover{
+  transform: scale(1);
+  transition: transform 3s ease-in-out;
+  animation: zoomIn 3s forwards;
+}
+.text-shadow{
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
