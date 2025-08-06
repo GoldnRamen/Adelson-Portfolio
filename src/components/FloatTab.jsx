@@ -32,7 +32,9 @@ export default function FloatTab (){
                             <li onClick={()=>setPage("project")} className={`home cursor-pointer ${page === "project" ? "text-white" : "text-gray-500"}`}>Projects</li>
                         </ul>
                         <div className="items-end text-xs">
-                            <p className="border rounded-full border-b-gray-400 w-fit py-1 px-2">Download&nbsp;resume</p>
+                            <a href="/files/Adelson_Resume.pdf" download>
+                                <p className="border rounded-full border-b-gray-400 w-fit py-1 px-2">Download&nbsp;resume</p>
+                            </a>
                         </div>
                     </div>                   
                 </div>

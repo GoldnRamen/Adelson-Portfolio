@@ -49,7 +49,7 @@ export default function ImageShuffler() {
 
   return (
     <div className="col-span-4 w-full h-[100vh] overflow-hidden relative">
-      <div className='cursor-pointer h-[44vh] top-[5vh] left-14 absolute w-[35vh] animated-slide-top overflow-hidden border border-5 border-gray-900 '>
+      <div className='cursor-pointer h-[36vh] top-[8vh] left-22 absolute w-[27vh] animated-slide-top overflow-hidden border border-5 border-gray-900 '>
         <img
         alt="Public"
         key={images[0]}
@@ -58,7 +58,7 @@ export default function ImageShuffler() {
         onMouseEnter={()=>hoveringImg()} onMouseLeave={()=>hoveringImg()}
         />
       </div>
-      <div className='cursor-pointer h-[30vh] top-[19vh] right-5 absolute w-[41vh] animated-slide-bottom overflow-hidden border border-5 border-gray-900 '>
+      <div className='cursor-pointer h-[22vh] top-[22vh] right-20 absolute w-[33vh] animated-slide-bottom overflow-hidden border border-5 border-gray-900 '>
         <img
           alt="Public"
           key={images[1]}
@@ -67,7 +67,7 @@ export default function ImageShuffler() {
           onMouseEnter={()=>hoveringImg1()} onMouseLeave={()=>hoveringImg1()}
         />
       </div>
-      <div className='cursor-pointer hover:transPic h-[30vh] top-[50vh] left-5 absolute w-[41vh] animated-slide-bottom overflow-hidden border border-5 border-gray-900 '>
+      <div className='cursor-pointer hover:transPic h-[22vh] top-[45vh] left-13 absolute w-[33vh] animated-slide-bottom overflow-hidden border border-5 border-gray-900 '>
         <img
           alt="Public"
           key={images[2]}
@@ -76,7 +76,7 @@ export default function ImageShuffler() {
           onMouseEnter={()=>hoveringImg2()} onMouseLeave={()=>hoveringImg2()}
         />
       </div>
-      <div className={`cursor-pointer h-[44vh] top-[50vh] right-14 absolute w-[35vh] animated-slide-top overflow-hidden border border-5 border-gray-900 `}>
+      <div className={`cursor-pointer h-[36vh] top-[45vh] right-29 absolute w-[27vh] animated-slide-top overflow-hidden border border-5 border-gray-900 `}>
         <img
           alt="Public"
           // key={images[3]}

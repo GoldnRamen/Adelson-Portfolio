@@ -7,14 +7,17 @@ import FloatTab from '@/components/FloatTab'
 import ImageShuffler from '@/components/ImageShuffler';
 import RollingName from '@/components/RollingName'
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { FaRotate } from "react-icons/fa6";
+import { FaMedium, FaWhatsapp } from "react-icons/fa6";
 import { FiLinkedin } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { FaMediumM } from "react-icons/fa";
 import { useContext, useState } from 'react';
 import { RenderContext, RenderProvider } from '@/context/RenderContext';
+import Projects from '@/components/Projects';
 
 export default function Home() {
-  const {setPage, page,} = useContext(RenderContext)
+  const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4} = useContext(RenderContext)
 
   return (
     <div className='overflow-hidden' style={{backgroundImage: 'url("/iran-6888574_960_720.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}>
@@ -23,7 +26,7 @@ export default function Home() {
         <ImageShuffler />
         <div className='col-span-5 w-full flex p-1 relative'>
           { page === "home"  &&
-            <div id='Home' className='bg-gradient-to-tl from-800 via-gray-800 to-gray-500 p-2 relative m-1 h-[100vh] overflow-hidden mb-2'>
+            <div id='Home' className='bg-gradient-to-tl from-transparent via-gray-800 to-gray-transparent p-2 relative m-1 h-[100vh] overflow-hidden mb-2'>
               {/* <div className='absolute top-[15px] right-10 rounded-l-[50%] bg-black border-l border-black shadow-white shadow-b irregular-box animated-slide-top'>
                   <div className='rounded-l-[50%] bg-gray-900 border-l border-black shadow-white shadow-b irregular-box'>
                     <img src="/Ade17 cut_055438.png" className='w-[280px] rounded-bl-[13%] bg-gradient-to-tl from-black via-gray-800 to-white irregular-box' alt="Adelson" />
@@ -60,45 +63,73 @@ export default function Home() {
             </div> 
           }
           { page === "contact" &&
-            <div id='Contact' className='bg-gradient-to-tl from-800 via-gray-800 to-gray-500 p-2 w-full'>
-              <p>Contact</p>
-              <p>Contact</p>
-              <p>Contact</p>
-              <p>Contact</p>
-              <p>Contact</p>
-              <p>Contact</p>
+            <div id='Contact' className='p-2 w-full relative'>
+              <div className='absolute inset-0 opacity-40' style={{backgroundImage: 'url("/sand-7564466_960_720.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}></div>
+              <div className='z-20 relative'>
+                  <div class="bg-gradient-to-br from-transparent via-gray-transparent to-gray-600 border-b border-5 shadow-lg shadow-black border-gray-500 p-6 rounded-2xl w-fit text-center mt-[20vh] mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-800">Contact Me</h1>
+                  </div>
+                  <div class="space-y-4 p-8 rounded-2xl w-full flex flex-row justify-between text-center mt-[15vh] mx-auto">
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped1 ? 'rotate-y-180' : ''} relative`}>
+                      <FaWhatsapp className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped1 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped1(!flipped1)} />
+                      {flipped1 && 
+                        <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
+                          <FaRotate className='right-3 text-gray-900 text-sm absolute top-2 cursor-pointer'  onClick={() => setFlipped1(false)}/>
+                          <a href="tel:+2349055731649" target="_blank" rel="noopener" class="text-blue-600 text-xs hover:underline">
+                            @adelsondabup
+                          </a> 
+                        </div>
+                      }
+                    </div>
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped2 ? 'rotate-y-180' : ''} relative`}>
+                      <FiLinkedin className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped2 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped2(!flipped2)} />
+                      {flipped2 && 
+                        <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
+                          <FaRotate className='right-3 text-gray-900 text-sm absolute top-2 cursor-pointer'  onClick={() => setFlipped2(false)}/>
+                          <a href="https://github.com/GoldnRamen" target="_blank" rel="noopener" class="text-blue-600 text-xs hover:underline">
+                            linkedin.com/in/adelson-dabup-aniseng-7a5787179/
+                          </a> 
+                        </div>
+                      }
+                    </div>
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped3 ? 'rotate-y-180' : ''} relative`}>
+                      <FaGithub className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped3 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped3(!flipped3)} />
+                      {flipped3 && 
+                        <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
+                          <FaRotate className='right-3 text-gray-900 text-sm absolute top-2 cursor-pointer'  onClick={() => setFlipped3(false)}/>
+                          <a href="https://linkedin.com/in/adelson-dabup-aniseng-7a5787179/" target="_blank" rel="noopener" class="text-blue-600 text-xs hover:underline">
+                            github.com/GoldnRamen
+                          </a> 
+                        </div>
+                      }
+                    </div>
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped4 ? 'rotate-y-180' : ''} relative`}>
+                      <FaMediumM className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped4 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped4(!flipped4)} />
+                      {flipped4 && 
+                        <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
+                          <FaRotate className='right-3 text-gray-900 text-sm absolute top-2 cursor-pointer'  onClick={() => setFlipped4(false)}/>
+                          <a href="https://medium.com/@adelsondabup" target="_blank" rel="noopener" class="text-blue-600 text-xs hover:underline">
+                            medium.com/@adelsondabup
+                          </a> 
+                        </div>
+                      }
+                    </div>
+                  </div>
+              </div>
             </div>
           }
           { page === "project" &&
-            <div id='Project' className='bg-gradient-to-tl from-800 via-gray-800 to-gray-500 p-2 w-full'>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
-              <p>Project</p>
+            <div id='Project' className='p-2 w-full'>
+              <div className='absolute inset-0 opacity-40'  style={{backgroundImage: 'url("/desert-8542838_960_720.jpg")', backgroundRepeat: "no-repeat", backgroundRepeat: "no-repeat"}} ></div>
+              <Projects />
             </div>
           }
         </div>
         <div className='col-span-1 border-l border-gray-500 relative'>
           <ul className='absolute bottom-10 animated-slide-bottom px-10 flex-cols space-y-5 overflow-hidden'>
-            <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><FiLinkedin size={30} /></li>
-            <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><FaGithub size={30} /></li>
-            <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><FaMediumM size={30} /></li>
+            <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://linkedin.com/in/adelson-dabup-aniseng-7a5787179/"><FiLinkedin size={30} /></a></li>
+            <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://github.com/GoldnRamen"><FaGithub size={30} /></a></li>
+            <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://medium.com/@adelsondabup"><FaMediumM size={30} /></a></li>
           </ul>
         </div>
       </section>

@@ -221,3 +221,19 @@ body {
 .text-shadow{
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
