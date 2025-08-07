@@ -50,7 +50,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="p-7 relative m-2 h-[95vh]">
+    <div className="lg:p-7 p-3 relative m-2 h-[95vh]">
         <div className="opacity-10"></div>
         <h1 className="text-3xl font-bold mt-[10vh] mb-6 text-center text-gray-800">
           My Projects

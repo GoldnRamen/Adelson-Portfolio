@@ -17,7 +17,7 @@ import { RenderContext, RenderProvider } from '@/context/RenderContext';
 import Projects from '@/components/Projects';
 
 export default function Home() {
-  const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4} = useContext(RenderContext)
+  const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4, hover, setHover, hoveringImg} = useContext(RenderContext)
 
   return (
     <div className='overflow-hidden' style={{backgroundImage: 'url("/iran-6888574_960_720.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}>
@@ -57,9 +57,10 @@ export default function Home() {
             </div> 
           }
           { page === "about" &&
-            <div id='About' style={{backgroundImage: 'url("/texture-2061709_640.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}} className='p-7 relative m-2 h-[97vh] opacity-80 overflow-y-scroll overflow-x-hidden'>
-              <div className='sticky mt-[10vh] p-4 text-black'>                
-                <div className='space-y-3 mt-[20vh] mb-3'>
+            <div id='About' style={{backgroundImage: 'url("/texture-2061709_640.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}} className='p-7 relative m-2 h-[97vh] w-full opacity-80'>
+              <div className='lg:mt-[7vh] mt-[7vh] h-[85vh] p-4 text-black absolute right-0 overflow-y-scroll overflow-x-hidden'>                
+                <img src={hover ? '/Ade12_cut_011348_dark.png' : '/Ade12_cut_011348.png'} alt="Public" className='border-b w-fit h-fit border-b-3' onMouseEnter={()=>hoveringImg()} onMouseLeave={()=>hoveringImg()}/>
+                <div className='space-y-3 lg:mt-[20vh] mt-[10vh] mb-3'>
                   <p className='text-2xl odibee'>About Adelson</p>
                   <p>I'm a passionate full-stack developer with a flair for creating responsive, visually engaging web experiences. I work primarily with React, Tailwind CSS, and JavaScript, building dynamic interfaces backed by Node.js, MongoDB, and MySQL.</p>
                   <p>My journey into tech began with curiosity and a love for problem-solving — now I turn ideas into fast, accessible applications with clean code and elegant transitions. Whether it's integrating APIs or fine-tuning performance, I enjoy every part of the build process.</p>
@@ -71,13 +72,12 @@ export default function Home() {
           }
           { page === "contact" &&
             <div id='Contact' className='p-2 w-full relative'>
-              <div className='absolute inset-0 opacity-40'></div>
-              <div className='z-20 relative'>
+              <div className='z-20 relative flex w-full mx-auto'>
                   {/* <div class="bg-gradient-to-br from-transparent via-gray-transparent to-gray-600 border-b border-5 shadow-black border-gray-500 p-6 shadow-lg rounded-2xl w-fit text-center mx-auto">
                     <h1 class="text-3xl font-bold text-gray-800">Contact Me</h1>
                   </div> */}
-                  <div class="space-y-4 p-8 rounded-2xl w-full flex flex-row justify-between text-center mt-[40vh] mx-auto">
-                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped1 ? 'rotate-y-180' : ''} relative`}>
+                  <div class="space-y-4 p-8 rounded-2xl w-full flex lg:flex-row flex-col justify-between text-center lg:mt-[40vh] mt-[20vh] mx-auto">
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped1 ? 'rotate-y-180' : ''} relative mx-auto`}>
                       <FaWhatsapp className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped1 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped1(!flipped1)} />
                       {flipped1 && 
                         <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
@@ -88,7 +88,7 @@ export default function Home() {
                         </div>
                       }
                     </div>
-                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped2 ? 'rotate-y-180' : ''} relative`}>
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped2 ? 'rotate-y-180' : ''} relative mx-auto`}>
                       <FiLinkedin className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped2 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped2(!flipped2)} />
                       {flipped2 && 
                         <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
@@ -99,7 +99,7 @@ export default function Home() {
                         </div>
                       }
                     </div>
-                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped3 ? 'rotate-y-180' : ''} relative`}>
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped3 ? 'rotate-y-180' : ''} relative mx-auto`}>
                       <FaGithub className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped3 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped3(!flipped3)} />
                       {flipped3 && 
                         <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
@@ -110,7 +110,7 @@ export default function Home() {
                         </div>
                       }
                     </div>
-                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped4 ? 'rotate-y-180' : ''} relative`}>
+                    <div className={`p-2 duration-700 transform-style preserve-3d ${flipped4 ? 'rotate-y-180' : ''} relative mx-auto`}>
                       <FaMediumM className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped4 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped4(!flipped4)} />
                       {flipped4 && 
                         <div className='bg-white items-center align-center rounded-lg shadow-lg shadow-gray-900 p-5 backface-hidden rotate-y-180 relative'>
@@ -127,12 +127,12 @@ export default function Home() {
           }
           { page === "project" &&
             <div id='Project' className='p-2 w-full'>
-              <div className='absolute inset-0 opacity-40'  style={{backgroundImage: 'url("/desert-8542838_960_720.jpg")', backgroundRepeat: "no-repeat", backgroundRepeat: "no-repeat"}} ></div>
+              <div className='absolute w-full inset-0 opacity-40'  style={{backgroundImage: 'url("/desert-8542838_960_720.jpg")', backgroundRepeat: "no-repeat", backgroundRepeat: "no-repeat", backgroundSize:"cover"}} ></div>
               <Projects />
             </div>
           }
         </div>
-        <div className='col-span-1 border-l border-gray-500 relative'>
+        <div className='col-span-1 hidden lg:block border-l border-gray-500 relative'>
           <ul className='lg:absolute bottom-10 animated-slide-bottom px-10 flex-cols space-y-5 overflow-hidden'>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://linkedin.com/in/adelson-dabup-aniseng-7a5787179/"><FiLinkedin size={30} /></a></li>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://github.com/GoldnRamen"><FaGithub size={30} /></a></li>
