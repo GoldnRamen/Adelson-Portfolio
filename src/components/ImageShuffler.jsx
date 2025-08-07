@@ -48,7 +48,7 @@ export default function ImageShuffler() {
   }, []);
 
   return (
-    <div className="col-span-4 w-full h-[100vh] overflow-hidden relative">
+    <div className="col-span-4 hidden lg:block w-full h-[100vh] overflow-hidden relative">
       <div className='cursor-pointer h-[36vh] top-[8vh] left-22 absolute w-[27vh] animated-slide-top overflow-hidden border border-5 border-gray-900 '>
         <img
         alt="Public"

@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className='overflow-hidden' style={{backgroundImage: 'url("/iran-6888574_960_720.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}>
       <FloatTab />
-      <section className='w-full h-[100vh] grid grid-cols-10' >
+      <section className='w-full h-[100vh] lg:grid grid-cols-10' >
         <ImageShuffler />
         <div className='col-span-5 w-full flex p-1 relative'>
           { page === "home"  &&
@@ -32,18 +32,25 @@ export default function Home() {
                     <img src="/Ade17 cut_055438.png" className='w-[280px] rounded-bl-[13%] bg-gradient-to-tl from-black via-gray-800 to-white irregular-box' alt="Adelson" />
                   </div>
                 </div> */}
-              <RollingName />
+              <RollingName />       
               <div className='sticky'>
-                <div className='space-y-3  mt-[5vh] ml-3 mr-30'>
-                  <p className='text-2xl font-saira '>Full Stack Web Developer</p>
-                  <p>
-                    Hello! I’m Adelson Dabup, a curious builder of websites and apps. I believe that great code meets great design, and I’m here to craft digital solutions that make people’s lives easier
-                  </p>
-                  <div className='flex gap-5 ml-20 mt-10'>
-                      <div className="border rounded-full b0 bg-transparent text-gray-300 w-fit p-4 flex gap-2 itetransPic ">
-                        <p className='odibee text-xl font-semibold'>Contact Me</p>
-                        <MdOutlineKeyboardArrowRight size={30}/>
-                      </div>
+                <div className='space-y-3  lg:mt-[5vh] mt-[2vh] ml-3 lg:mr-30'>
+                  <p className='lg:text-2xl font-saira text-xl'>Full Stack Web Developer</p>
+                  <div className="lg:hidden items-end text-xs">
+                    <a href="/files/Adelson_Resume.pdf" download>
+                        <p className="border rounded-full border-b-gray-400 w-fit py-1 px-2">Download&nbsp;resume</p>
+                    </a>
+                </div>        
+                  <div className='lg:relative sticky lg:overflow-y-hidden overflow-y-scroll lg:p-0 p-2 lg:h-full h-[30vh]'>
+                    <p>
+                      Hello! I’m Adelson Dabup, a curious builder of websites and apps. I believe that great code meets great design, and I’m here to craft digital solutions that make people’s lives easier
+                    </p>
+                    <div className='lg:ml-20 my-10'>
+                        <div onClick={()=>setPage("contact")} className="border rounded-full b0 bg-transparent text-gray-300 w-fit p-4 flex gap-2 itetransPic  hover:bg-white hover:text-gray-900 cursor-pointer">
+                          <p className='odibee lg:text-xl font-semibold'>Contact Me</p>
+                          <MdOutlineKeyboardArrowRight size={30}/>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -57,19 +64,19 @@ export default function Home() {
                   <p>I'm a passionate full-stack developer with a flair for creating responsive, visually engaging web experiences. I work primarily with React, Tailwind CSS, and JavaScript, building dynamic interfaces backed by Node.js, MongoDB, and MySQL.</p>
                   <p>My journey into tech began with curiosity and a love for problem-solving — now I turn ideas into fast, accessible applications with clean code and elegant transitions. Whether it's integrating APIs or fine-tuning performance, I enjoy every part of the build process.</p>
                   <p>I'm currently open to opportunities that challenge me to grow and collaborate with others. When I’m not coding, I’m usually exploring design inspiration or experimenting with new tools and frameworks.</p>
-                  <div className=''><p>Let’s build something meaningful — feel free to check out my projects or</p><p onClick={()=>setPage("contact")} className='text-blue-500 hover:underline'> get in touch!</p></div>
+                  <div className=''><p>Let’s build something meaningful — feel free to check out my projects or</p><p onClick={()=>setPage("contact")} className='text-blue-500 cursor-pointer hover:underline'> get in touch!</p></div>
                 </div>
               </div>
             </div> 
           }
           { page === "contact" &&
             <div id='Contact' className='p-2 w-full relative'>
-              <div className='absolute inset-0 opacity-40' style={{backgroundImage: 'url("/sand-7564466_960_720.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}></div>
+              <div className='absolute inset-0 opacity-40'></div>
               <div className='z-20 relative'>
-                  <div class="bg-gradient-to-br from-transparent via-gray-transparent to-gray-600 border-b border-5 shadow-lg shadow-black border-gray-500 p-6 rounded-2xl w-fit text-center mt-[20vh] mx-auto">
+                  {/* <div class="bg-gradient-to-br from-transparent via-gray-transparent to-gray-600 border-b border-5 shadow-black border-gray-500 p-6 shadow-lg rounded-2xl w-fit text-center mx-auto">
                     <h1 class="text-3xl font-bold text-gray-800">Contact Me</h1>
-                  </div>
-                  <div class="space-y-4 p-8 rounded-2xl w-full flex flex-row justify-between text-center mt-[15vh] mx-auto">
+                  </div> */}
+                  <div class="space-y-4 p-8 rounded-2xl w-full flex flex-row justify-between text-center mt-[40vh] mx-auto">
                     <div className={`p-2 duration-700 transform-style preserve-3d ${flipped1 ? 'rotate-y-180' : ''} relative`}>
                       <FaWhatsapp className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped1 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped1(!flipped1)} />
                       {flipped1 && 
@@ -126,7 +133,7 @@ export default function Home() {
           }
         </div>
         <div className='col-span-1 border-l border-gray-500 relative'>
-          <ul className='absolute bottom-10 animated-slide-bottom px-10 flex-cols space-y-5 overflow-hidden'>
+          <ul className='lg:absolute bottom-10 animated-slide-bottom px-10 flex-cols space-y-5 overflow-hidden'>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://linkedin.com/in/adelson-dabup-aniseng-7a5787179/"><FiLinkedin size={30} /></a></li>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://github.com/GoldnRamen"><FaGithub size={30} /></a></li>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://medium.com/@adelsondabup"><FaMediumM size={30} /></a></li>

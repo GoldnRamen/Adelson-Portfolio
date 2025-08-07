@@ -15,12 +15,12 @@ export default function FloatTab (){
     }, []);
     return(
         <div
-            className={`fixed top-5 z-50 left-10 right-10 opacity-95 bg-gray-700 rounded-full p-1 items-center shadow-2xl 
+            className={`fixed block top-5 z-50 lg:left-10 left-3 lg:right-10 right-3 opacity-95 bg-gray-700 rounded-full p-1 items-center shadow-2xl 
                 transition-[margin,width] duration-1000 ease-in-out
-                ${shrink ? 'ml-[400px] w-[calc(100%-450px)]' : 'animated-slide-right'}`}>
+                ${shrink ? 'lg:ml-[400px] lg:w-[calc(100%-450px)]' : 'lg:animated-slide-right'}`}>
             <div className="bg-black rounded-full px-1 bg-gradient-to-br from-gray-950 to-cyan-800">
-                <div className="p-1 opacity-100 mx-10 grid grid-cols-7 items-center">
-                    <div className="text-xs col-span-3 lobster">
+                <div className="p-1 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
+                    <div className="hidden lg:block text-xs col-span-3 lobster">
                         <p>Adelson</p>
                         <p>Dabup</p>
                     </div>
@@ -31,15 +31,14 @@ export default function FloatTab (){
                             <li onClick={()=>setPage("contact")} className={`home cursor-pointer ${page === "contact" ? "text-white" : "text-gray-500"}`}>Contacts</li>
                             <li onClick={()=>setPage("project")} className={`home cursor-pointer ${page === "project" ? "text-white" : "text-gray-500"}`}>Projects</li>
                         </ul>
-                        <div className="items-end text-xs">
+                        <div className="items-end text-xs hidden lg:block">
                             <a href="/files/Adelson_Resume.pdf" download>
                                 <p className="border rounded-full border-b-gray-400 w-fit py-1 px-2">Download&nbsp;resume</p>
                             </a>
                         </div>
-                    </div>                   
+                    </div>    
                 </div>
             </div>
-            
         </div>
     )
 }

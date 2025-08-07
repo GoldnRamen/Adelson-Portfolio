@@ -62,7 +62,7 @@ const Projects = () => {
               <div className="bg-gray-700 h-full w-full p-3 rounded-lg">
                 <button
                     onClick={() => toggleProject(index)}
-                    className="text-xl flex items-center gap-3 font-semibold text-black w-full text-left hover:underline"
+                    className="text-xl cursor-pointer flex items-center gap-3 font-semibold text-black w-full text-left hover:underline"
                 >
                     <FaFolderOpen />{project.title}
                 </button>
@@ -72,7 +72,7 @@ const Projects = () => {
                     <div className="text-sm flex items-center gap-2">
                         <a
                             href={project.link}
-                            className="text-blue-600 hover:underline block mt-2"
+                            className="text-blue-600 hover:underline cursor-pointer block mt-2"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
