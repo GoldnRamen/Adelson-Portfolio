@@ -16,7 +16,7 @@ export default function FloatTab (){
     return(
         <div
             className={`fixed block top-5 z-50 lg:left-10 left-3 lg:right-10 right-3 opacity-95 bg-gray-700 rounded-full p-1 items-center shadow-2xl 
-                transition-[margin,width] duration-1000 ease-in-out
+                transition-[margin,width] duration-1000 ease-in-out animated-slide-right
                 ${shrink ? 'lg:ml-[400px] lg:w-[calc(100%-450px)]' : 'lg:animated-slide-right'}`}>
             <div className="bg-black rounded-full px-1 bg-gradient-to-br from-gray-950 to-cyan-800">
                 <div className="p-1 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
@@ -28,7 +28,7 @@ export default function FloatTab (){
                         <ul className="flex gap-4 roboto h-full text-center space-around align-middle">
                             <li onClick={()=>setPage("home")} className={`home cursor-pointer ${page === "home" ? "text-white" : "text-gray-500"}`} >Home</li>
                             <li onClick={()=>setPage("about")} className={`home cursor-pointer ${page === "about" ? "text-white" : "text-gray-500"}`}>About</li>
-                            <li onClick={()=>setPage("contact")} className={`home cursor-pointer ${page === "contact" ? "text-white" : "text-gray-500"}`}>Contacts</li>
+                            <li onClick={()=>setPage("contact")} className={`home lg:hidden cursor-pointer ${page === "contact" ? "text-white" : "text-gray-500"}`}>Contacts</li>
                             <li onClick={()=>setPage("project")} className={`home cursor-pointer ${page === "project" ? "text-white" : "text-gray-500"}`}>Projects</li>
                         </ul>
                         <div className="items-end text-xs hidden lg:block">

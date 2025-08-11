@@ -42,7 +42,7 @@ const projectFiles = [
   },
 ];
 
-const Projects = () => {
+export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleProject = (index) => {
@@ -55,19 +55,19 @@ const Projects = () => {
         <h1 className="text-3xl font-bold mt-[10vh] mb-6 text-center text-gray-800">
           My Projects
         </h1>
-      <div className="sticky mt-[5vh] p-4 text-black h-[70vh] overflow-y-scroll overflow-x-hidden">
+      <div className="sticky mt-[5vh] p-4 text-black h-[68vh] overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-black overflow-x-hidden">
         <div className="space-y-2 mt-5">
           {projectFiles.map((project, index) => (
             <div key={index} className="p-4 relative">
-              <div className="bg-gray-700 h-full w-full p-3 rounded-lg">
+              <div className="bg-gradient-to-br from-gray-950 to-cyan-800 h-full w-full p-3 rounded-lg">
                 <button
                     onClick={() => toggleProject(index)}
-                    className="text-xl cursor-pointer flex items-center gap-3 font-semibold text-black w-full text-left hover:underline"
+                    className="text-xl cursor-pointer flex items-center gap-3 font-semibold text-gray-300 w-full text-left hover:underline"
                 >
                     <FaFolderOpen />{project.title}
                 </button>
                 {activeIndex === index && (
-                    <div className="mt-2 text-black">
+                    <div className="mt-2 text-gray-300">
                     <p>{project.description}</p>
                     <div className="text-sm flex items-center gap-2">
                         <a
@@ -90,5 +90,3 @@ const Projects = () => {
     </div>
   );
 };
-
-export default Projects;
