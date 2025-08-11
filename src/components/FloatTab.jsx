@@ -9,7 +9,7 @@ export default function FloatTab (){
     useEffect(() => {
         const timer = setTimeout(() => {
         setShrink(true); // shrink after 5 seconds
-        }, 15000);
+        }, 4000);
 
         return () => clearTimeout(timer);
     }, []);
