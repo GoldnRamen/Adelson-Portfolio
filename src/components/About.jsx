@@ -10,8 +10,8 @@ export default function About(){
                     {/* <div className="rounded-full p-2 shadow shadow-black bg-gradient-to-br from-gray-950 to-cyan-800 mx-auto w-[50%] h-full">
                         
                     </div> */}
-                    <div className="border-3 rounded-full bg-cyan-800 border-gray-900 h-fit w-fit overflow-hidden relative">
-                            <img src={hover ? '/Ade12bw.png' : '/Ade12_cut_011348.png'} alt="Public" onMouseEnter={()=>hoveringImg()} onMouseLeave={()=>hoveringImg()}/>
+                    <div className="border-3 rounded-full bg-cyan-800 border-gray-900 h-fit w-fit overflow-hidden relative md:mx-auto">
+                            <img className='md:h-56' src={hover ? '/Ade12bw.png' : '/Ade12_cut_011348.png'} alt="Public" onMouseEnter={()=>hoveringImg()} onMouseLeave={()=>hoveringImg()}/>
                         </div>
                 </div>
                 <div className='flex h-fit w-fit mt-[3vh] mx-auto'><p className='text-2xl odibee'>About Adelson</p></div>

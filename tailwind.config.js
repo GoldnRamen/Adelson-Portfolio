@@ -1,6 +1,7 @@
 const { Odibee_Sans } = require("next/font/google");
 const { Roboto } = require("next/font/google");
 const { Lobster } = require("next/font/google");
+import scrollbar from "tailwind-scrollbar"
 // tailwind.config.js
 module.exports = {
   content: [
@@ -25,5 +26,5 @@ module.exports = {
       },
     },
   },
-  plugins: require["tailwind-scrollbar"],
+  plugins: [scrollbar],
 }

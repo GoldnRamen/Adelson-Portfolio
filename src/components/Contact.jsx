@@ -22,7 +22,7 @@ export default function Contact(){
             {/* <div class="bg-gradient-to-br from-transparent via-gray-transparent to-gray-600 border-b border-5 shadow-black border-gray-500 p-6 shadow-lg rounded-2xl w-fit text-center mx-auto">
             <h1 class="text-3xl font-bold text-gray-800">Contact Me</h1>
             </div> */}
-            <div class="space-y-4 p-8 rounded-2xl w-full flex lg:flex-row flex-col justify-between text-center mt-[15vh] mx-auto">
+            <div class="space-y-4 p-8 rounded-2xl w-full flex lg:flex-row flex-col justify-between text-center mt-[20vh] mx-auto">
             <div className={`p-2 duration-700 transform-style preserve-3d ${flipped1 ? 'rotate-y-180' : ''} relative mx-auto`}>
                 <FaEnvelope className={`transPic cursor-pointer backface-hidden text-gray-100 ${!flipped1 ? "relative" : "hidden"}`} size={50} onClick={()=>setFlipped1(!flipped1)} />
                 {flipped1 && 

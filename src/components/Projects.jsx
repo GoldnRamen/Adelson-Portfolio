@@ -55,7 +55,7 @@ export default function Projects() {
         <h1 className="text-3xl font-bold mt-[10vh] mb-6 text-center text-gray-800">
           My Projects
         </h1>
-      <div className="sticky mt-[5vh] p-4 text-black h-[68vh] overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-black overflow-x-hidden">
+      <div className="sticky mt-[5vh] p-4 text-black h-[68vh] overflow-y-scroll overflow-x-hidden">
         <div className="space-y-2 mt-5">
           {projectFiles.map((project, index) => (
             <div key={index} className="p-4 relative">
