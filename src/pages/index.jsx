@@ -13,6 +13,7 @@ import { FaEnvelope } from "react-icons/fa6";
 import { FiLinkedin } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { FaMediumM } from "react-icons/fa";
+import { PiCopyrightThin } from "react-icons/pi";
 import { useContext, useState } from 'react';
 import { RenderContext, RenderProvider } from '@/context/RenderContext';
 import Projects from '@/components/Projects';
@@ -55,7 +56,7 @@ export default function Home() {
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://linkedin.com/in/adelson-dabup-aniseng-7a5787179/"><FiLinkedin size={30} /></a></li>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://github.com/GoldnRamen"><FaGithub size={30} /></a></li>
             <li className='hover:shadow-lg hover:shadow-gray-800 hover:rounded-lg transPic'><a href="https://medium.com/@adelsondabup"><FaMediumM size={30} /></a></li>
-          </ul>
+          </ul>          
         </div>
       </section>
     </div>

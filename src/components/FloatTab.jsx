@@ -18,11 +18,14 @@ export default function FloatTab (){
             className={`fixed block top-5 z-50 lg:left-10 left-3 lg:right-10 right-3 opacity-95 bg-gray-700 rounded-full p-1 items-center shadow-2xl 
                 transition-[margin,width] duration-1000 ease-in-out animated-slide-right
                 ${shrink ? 'lg:ml-[400px] lg:w-[calc(100%-450px)]' : 'lg:animated-slide-right'}`}>
-            <div className="bg-black rounded-full px-1 bg-gradient-to-br from-gray-950 to-cyan-800">
-                <div className="p-1 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
-                    <div className="hidden lg:block text-xs col-span-3 lobster">
-                        <p>Adelson</p>
-                        <p>Dabup</p>
+            <div className="p-1 lg:p-0 bg-black rounded-full px-1 bg-gradient-to-br from-cyan-600 via-gray-950 to-cyan-800">
+                <div className="p-1 lg:p-0 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
+                    <div className="hidden lg:flex gap-3 items-center text-xs col-span-3 lobster">
+                        <img src="/Adel_Logo.png" className='h-[40px] m-0 w-fit rounded-lg' alt="Logo" />
+                        <div>
+                            <p>Adelson</p>
+                            <p>Dabup</p>
+                        </div>
                     </div>
                     <div className="col-span-4 flex justify-between text-sm items-center">
                         <ul className="flex gap-4 roboto h-full text-center space-around align-middle">
