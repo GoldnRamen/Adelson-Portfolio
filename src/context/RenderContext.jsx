@@ -20,14 +20,22 @@ export const RenderProvider=({children})=>{
     const [isVisible4, setIsVisible4] = useState(false)
     const [stillVisible4, setStillVisible4] = useState(false)
 
+    const [lightMode, setLightMode] = useState(true)
     const [hover, setHover] = useState(true)
 
     const hoveringImg = ()=>{
-    setHover(prev=>!prev)
-  }
+        setHover(prev=>!prev)
+    }
+    const setLight = ()=>{
+        setLightMode(true)
+    }
+    const setDark = ()=>{
+        setLightMode(false)
+    }
+
     
     return(
-        <RenderContext.Provider value={{page, setPage, flipped1, flipped2, flipped3, flipped4, flipped5, setFlipped1, setFlipped2, setFlipped3, setFlipped4, setFlipped5, hover, setHover, hoveringImg}}>
+        <RenderContext.Provider value={{page, setPage, flipped1, flipped2, flipped3, flipped4, flipped5, setFlipped1, setFlipped2, setFlipped3, setFlipped4, setFlipped5, hover, setHover, hoveringImg, lightMode, setLightMode, setDark, setLight}}>
             {children}
         </RenderContext.Provider>
     )

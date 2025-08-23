@@ -165,6 +165,11 @@ body {
   animation: slideInFromRight 1s ease-out forwards;
   animation-delay: 2s;
 }
+.animated-slide-mode {
+  opacity: 0;
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 10s;
+}
 .animated-slide-top {
   opacity: 0;
   animation: slideInFromTop 1s ease-out forwards;
