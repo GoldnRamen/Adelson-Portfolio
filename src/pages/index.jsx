@@ -22,16 +22,16 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 
 export default function Home() {
-  const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4, hover, setHover, hoveringImg} = useContext(RenderContext)
+  const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4, hover, setHover, hoveringImg, lightMode} = useContext(RenderContext)
 
   return (
-    <div className='overflow-hidden' style={{backgroundImage: 'url("/iran-6888574_960_720.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}>
+    <div className='overflow-hidden' style={{backgroundImage: `${lightMode ? `url("/desert-3985417_960_720.jpg")` : `url("/iran-6888574_960_720.jpg")`}`, backgroundRepeat: 'no-repeat', backgroundSize: "cover"}}>
       <FloatTab />
       <section className='w-full h-[100vh] lg:grid grid-cols-10' >
         <ImageShuffler />
         <div className='col-span-5 w-full flex p-1 relative'>
           { page === "home"  &&
-            <div id='Home' className='bg-gradient-to-tl from-transparent via-gray-800 to-gray-transparent p-2 relative m-1 h-[100vh] overflow-hidden mb-2'>
+            <div id='Home' className={`${lightMode ? `bg-gradient-to-tl from-transparent via-yellow-900 to-transparent` : `bg-gradient-to-tl from-transparent via-gray-800 to-gray-transparent`} p-2 relative m-1 h-[100vh] overflow-hidden mb-2`}>
               <Homepage />
             </div> 
           }

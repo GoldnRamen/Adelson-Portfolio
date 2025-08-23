@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { RenderContext, RenderProvider } from '@/context/RenderContext';
 
 export default function About(){
-    const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4, hover, setHover, hoveringImg} = useContext(RenderContext)
+    const {setPage, page, setFlipped1, setFlipped2, setFlipped3, setFlipped4, flipped1, flipped2, flipped3, flipped4, hover, setHover, hoveringImg, lightMode} = useContext(RenderContext)
     return(
         <div id='About' style={{backgroundImage: 'url("/texture-2061709_640.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: "cover"}} className='p-7 relative m-2 h-[97vh] w-full lg:opacity-80 opacity-100'>
             <div className='lg:mt-[7vh] mt-[6vh] h-[87vh] p-4 text-black absolute right-0'>                

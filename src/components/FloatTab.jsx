@@ -21,7 +21,7 @@ export default function FloatTab (){
                 className={`${lightMode ? "bg-yellow-900 fixed" : "bg-gray-700 fixed"} block top-5 z-50 lg:left-10 left-3 lg:right-10 right-3 opacity-95 rounded-full p-1 items-center shadow-2xl 
                     transition-[margin,width] duration-1000 ease-in-out animated-slide-right
                     ${shrink ? 'lg:ml-[400px] lg:w-[calc(100%-450px)]' : 'lg:animated-slide-right'}`}>
-                <div className={`${lightMode ? "bg-gradient-to-br from-white via-yellow-100 text-black to-white" : "bg-gradient-to-br from-cyan-600 via-gray-950 to-cyan-800"} p-1 lg:p-0 rounded-full px-1`}>
+                <div className={`${lightMode ? "bg-gradient-to-br from-white via-yellow-100 to-white text-amber-900" : "bg-gradient-to-br from-cyan-600 via-gray-950 to-cyan-800"} p-1 lg:p-0 rounded-full px-1`}>
                     <div className="p-1 lg:p-0 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
                         <div className="hidden lg:flex gap-3 items-center text-xs col-span-3 lobster">
                             <img src="/Adel_Logo.png" className='h-[40px] m-0 w-fit rounded-lg' alt="Logo" />
@@ -32,10 +32,10 @@ export default function FloatTab (){
                         </div>
                         <div className="col-span-4 flex justify-between text-sm items-center">
                             <ul className="flex gap-4 roboto h-full text-center space-around align-middle">
-                                <li onClick={()=>setPage("home")} className={`home cursor-pointer ${page === "home" && lightMode === false ? "text-white" : "text-gray-500"}`} >Home</li>
-                                <li onClick={()=>setPage("about")} className={`home cursor-pointer ${page === "about" && lightMode === false ? "text-white" : "text-gray-500"}`}>About</li>
-                                <li onClick={()=>setPage("contact")} className={`home lg:hidden cursor-pointer ${page === "contact" && lightMode === false ? "text-white" : "text-gray-500"}`}>Contacts</li>
-                                <li onClick={()=>setPage("project")} className={`home cursor-pointer ${page === "project" ? "text-white" : "text-gray-500"}`}>Projects</li>
+                                <li onClick={()=>setPage("home")} className={`${lightMode ? `homeLight home` : ` home`} cursor-pointer ${(page === "home" && lightMode) && "font-bold text-amber-900"} ${(page !== "home" && !lightMode) && "text-gray-500"}`}>Home</li>
+                                <li onClick={()=>setPage("about")} className={`${lightMode ? `homeLight home` : ` home`} cursor-pointer  ${(page === "about" && lightMode) && "font-bold text-amber-900"} ${(page !== "about" && !lightMode) && "text-gray-500"}`}>About</li>
+                                <li onClick={()=>setPage("contact")} className={`${lightMode ? `homeLight home` : ` home`} lg:hidden cursor-pointer  ${(page === "contact" && lightMode) && "font-bold text-amber-900"} ${(page !== "contact" && !lightMode) && "text-gray-500"}`}>Contacts</li>
+                                <li onClick={()=>setPage("project")} className={`${lightMode ? `homeLight home` : ` home`} cursor-pointer  ${(page === "project" && lightMode) && "font-bold text-amber-900"} ${(page !== "project" && !lightMode) && "text-gray-500"}`}>Projects</li>
                             </ul>                            
                             <div className="items-end text-xs hidden lg:block">
                                 <a href="/files/Adelson_Resume.pdf" download>

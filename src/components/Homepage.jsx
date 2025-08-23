@@ -21,7 +21,7 @@ export default function Homepage() {
                         Hello! I’m Adelson Dabup, a curious builder of websites and apps. I believe that great code meets great design, and I’m here to craft digital solutions that make people’s lives easier
                     </p>
                     <div className='lg:ml-20 lg:hidden my-10'>
-                        <div onClick={()=>setPage("contact")} className="border rounded-full b0 bg-transparent text-gray-300 w-fit p-4 flex gap-2 itetransPic  hover:bg-white hover:text-gray-900 cursor-pointer">
+                        <div onClick={()=>setPage("contact")} className="border rounded-full bg-transparent text-gray-300 w-fit p-4 flex gap-2 transPic hover:bg-white hover:text-gray-900 cursor-pointer">
                             <p className='odibee lg:text-xl font-semibold'>Contact Me</p>
                             <MdOutlineKeyboardArrowRight size={30}/>
                         </div>

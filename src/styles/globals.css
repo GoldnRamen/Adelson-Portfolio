@@ -3,7 +3,6 @@
 @tailwind components; */
 @tailwind utilities;
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -233,8 +232,22 @@ body {
   bottom: -5px;
   transition: 0.3s;
 }
+.homeLight{
+  position: relative;
+  padding: 0 5px;
+}
+.homeLight:after{
+  content: "";
+  position: absolute;
+  background-color: rgb(105, 50, 5);
+  height: 3px;
+  left: 0;
+  width: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
 .home:hover{
-  color: white;
+  /* color: white; */
   border-left: .5px solid rgb(100, 100, 100);
   border-right: .5px solid rgb(100, 100, 100);
   box-shadow: #171717;

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { RenderContext } from '@/context/RenderContext';
+import { useContext, useEffect, useState } from 'react';
 
 const images = [
   '/COLLAGE_20221217_204658.jpg',
@@ -18,6 +19,7 @@ export default function ImageShuffler() {
   const [hover1, setHover1] = useState(true)
   const [hover2, setHover2] = useState(true)
   const [hover3, setHover3] = useState(true)
+  const {lightMode} = useContext(RenderContext)
 
   const hoveringImg = ()=>{
     setHover(prev=>!prev)
@@ -85,10 +87,10 @@ export default function ImageShuffler() {
     //     />
     //   </div>
     // </div>
-    <div className='animated-slide-top col-span-4 hidden lg:block w-[90%] h-[80vh] mt-10 rounded mx-auto shadow shadow-lg shadow-black bg-gradient-to-br from-gray-950 to-cyan-800 rounded-full relative p-3'>
-      <div className="border-5 rounded-full border-gray-200 h-full w-full overflow-hidden relative">
-        <div style={{backgroundImage: 'url("/wall-795219_1280.jpg")', backgroundRepeat: "no-repeat", backgroundSize: "cover"}} className="border-3 rounded-full border-gray-900 h-full w-full overflow-hidden relative">
-          <img src={hover ? '/Ade12bw.png' : '/Ade12_cut_011348.png'} alt="Public" className='border-b w-fit h-fit border-b-3' onMouseEnter={()=>hoveringImg()} onMouseLeave={()=>hoveringImg()}/>
+    <div className={`animated-slide-top col-span-4 hidden lg:block w-[90%] h-[80vh] mt-10 rounded mx-auto shadow shadow-lg shadow-black ${lightMode ? "bg-gradient-to-br from-yellow-900 to-amber-800" : "bg-gradient-to-br from-gray-950 to-cyan-800"} rounded-full relative p-3`}>
+      <div className={`border-5 rounded-full ${lightMode ? "border-yellow-200" : "border-gray-200"} h-full w-full overflow-hidden relative`}>
+        <div style={{backgroundImage: `url(${lightMode ? "/paper-1074131_1280.jpg" : "/wall-795219_1280.jpg"})`, backgroundRepeat: "no-repeat", backgroundSize: "cover"}} className="border-3 rounded-full border-gray-900 h-full w-full overflow-hidden relative">
+          <img src={lightMode ? '/Ade12_cut_011348.png' : `${hover ? '/Ade12bw.png' : '/Ade12_cut_011348.png'}`} alt="Public" className='border-b w-fit h-fit border-b-3' onMouseEnter={()=>hoveringImg()} onMouseLeave={()=>hoveringImg()}/>
         </div>
       </div>
     </div>
