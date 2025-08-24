@@ -46,7 +46,7 @@ export default function FloatTab (){
                     </div>
                 </div>
             </div>
-            <div className='fixed z-50 lg:top-17 top-3 lg:right-8 right-3 animated-slide-mode'>
+            <div className='fixed z-10 lg:top-17 top-3 lg:right-8 right-3 animated-slide-mode'>
                 <div className='flex mx-5 my-1 p-2 w-fit relative gap-2 mt-14 lg:mt-1'>
                     <div className='opacity-20 z-10 bg-black absolute right-0 left-0 top-0 bottom-0 rounded-lg'></div>
                     <div onClick={()=>setLightMode(true)} className={`cursor-pointer z-30 h-[1.5rem] w-[1.5rem] ${lightMode ? "bg-cyan-900" : "transparent"} rounded-full items-center`}><MdWbSunny className='mx-auto mt-1 text-amber-400' /></div>
