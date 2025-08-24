@@ -21,7 +21,7 @@ export default function FloatTab (){
                 className={`${lightMode ? "bg-yellow-900 fixed" : "bg-gray-700 fixed"} block top-5 z-50 lg:left-10 left-3 lg:right-10 right-3 opacity-95 rounded-full p-1 items-center shadow-2xl 
                     transition-[margin,width] duration-1000 ease-in-out animated-slide-right
                     ${shrink ? 'lg:ml-[400px] lg:w-[calc(100%-450px)]' : 'lg:animated-slide-right'}`}>
-                <div className={`${lightMode ? "bg-gradient-to-br from-white via-yellow-100 to-white text-amber-900" : "bg-gradient-to-br from-cyan-600 via-gray-950 to-cyan-800"} p-1 lg:p-0 rounded-full px-1`}>
+                <div className={`${lightMode ? "bg-yellow-100 text-amber-900" : "bg-gradient-to-br from-cyan-600 via-gray-950 to-cyan-800"} p-1 lg:p-0 rounded-full px-1`}>
                     <div className="p-1 lg:p-0 opacity-100 lg:mx-10 grid grid-cols-7 items-center">
                         <div className="hidden lg:flex gap-3 items-center text-xs col-span-3 lobster">
                             <img src="/Adel_Logo.png" className='h-[40px] m-0 w-fit rounded-lg' alt="Logo" />

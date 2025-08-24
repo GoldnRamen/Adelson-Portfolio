@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { RenderContext } from "@/context/RenderContext";
+import React, { useContext, useState } from "react";
 import { FaFolderOpen } from "react-icons/fa6";
 import { FaLink } from "react-icons/fa6";
 
@@ -48,18 +49,18 @@ export default function Projects() {
   const toggleProject = (index) => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
-
+  const {lightMode} = useContext(RenderContext)
   return (
     <div className="lg:p-7 p-1 relative h-[95vh]">
         <div className="opacity-10"></div>
-        <h1 className="text-3xl font-bold mt-[10vh] mb-6 text-center text-gray-800">
+        <h1 className={`${lightMode ? "text-white" : "text-gray-800"} text-3xl font-bold mt-[20vh] lg:mt-[10vh] mb-6 text-center`}>
           My Projects
         </h1>
       <div className="sticky mt-[5vh] p-1 text-black h-[68vh] overflow-y-scroll overflow-x-hidden">
         <div className="space-y-2 mt-5">
           {projectFiles.map((project, index) => (
             <div key={index} className="p-4 relative">
-              <div className="bg-gradient-to-br from-gray-950 to-cyan-800 h-full w-full p-3 rounded-lg">
+              <div className={`${lightMode ? "bg-gradient-to-br from-yellow-950 to-yellow-800" : "bg-gradient-to-br from-gray-950 to-cyan-800"} bg-gradient-to-br from-gray-950 to-cyan-800 h-full w-full p-3 rounded-lg`}>
                 <button
                     onClick={() => toggleProject(index)}
                     className="text-xl cursor-pointer flex items-center gap-3 font-semibold text-gray-300 w-full text-left hover:underline"
