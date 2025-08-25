@@ -39,14 +39,14 @@ export default function FloatTab (){
                             </ul>                            
                             <div className="items-end text-xs hidden lg:block">
                                 <a href="/files/Adelson_Resume.pdf" download>
-                                    <p className="border rounded-full border-b-gray-400 w-fit py-1 px-2">Download&nbsp;resume</p>
+                                    <p className={`border ${lightMode ? "hover:bg-yellow-800 hover:text-white" : "hover:bg-white hover:text-cyan-900"} rounded-full border-b-gray-400 w-fit py-1 px-2`}>Download&nbsp;resume</p>
                                 </a>
                             </div>
                         </div>    
                     </div>
                 </div>
             </div>
-            <div className='fixed z-10 lg:top-17 top-3 lg:right-8 right-3 animated-slide-mode'>
+            <div className='fixed z-30 lg:top-17 top-3 lg:right-8 right-3 animated-slide-mode'>
                 <div className='flex mx-5 my-1 p-2 w-fit relative gap-2 mt-14 lg:mt-1'>
                     <div className='opacity-20 z-10 bg-black absolute right-0 left-0 top-0 bottom-0 rounded-lg'></div>
                     <div onClick={()=>setLightMode(true)} className={`cursor-pointer z-30 h-[1.5rem] w-[1.5rem] ${lightMode ? "bg-cyan-900" : "transparent"} rounded-full items-center`}><MdWbSunny className='mx-auto mt-1 text-amber-400' /></div>
